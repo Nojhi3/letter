@@ -4,6 +4,8 @@ import { useMotionValue, useTransform, motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { supabase } from '../utils/supabaseClient'
 
+// Usne na bola toh mai idk kya karega
+
 export default function DecisionAuraSection() {
   const mouseX = useMotionValue(0)
   const screenWidth = useRef(0)
