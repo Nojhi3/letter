@@ -1,21 +1,24 @@
 'use client'
 
 import { useMotionValue, useTransform, motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { supabase } from '../utils/supabaseClient'
-
-// Usne na bola toh mai idk kya karega
 
 export default function DecisionAuraSection() {
   const mouseX = useMotionValue(0)
-  const screenWidth = useRef(0)
+  const [screenWidth, setScreenWidth] = useState(1920) // Default fallback
 
   useEffect(() => {
-    screenWidth.current = window.innerWidth
+    setScreenWidth(window.innerWidth)
+
+    const handleResize = () => setScreenWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const leftAlpha = useTransform(mouseX, [0, screenWidth.current / 2], [0.5, 0])
-  const rightAlpha = useTransform(mouseX, [screenWidth.current / 2, screenWidth.current], [0, 0.5])
+  const leftAlpha = useTransform(mouseX, [0, screenWidth / 2], [0.5, 0])
+  const rightAlpha = useTransform(mouseX, [screenWidth / 2, screenWidth], [0, 0.5])
 
   const leftGlow = useTransform(leftAlpha, (alpha) =>
     `radial-gradient(circle at left, rgba(255,255,255,${alpha}) 0%, transparent 90%)`
