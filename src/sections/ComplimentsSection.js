@@ -9,7 +9,7 @@ export default function ComplimentsSection() {
         I just have to say...
       </h2>
       <p className="mt-6 text-lg md:text-2xl text-pink-800 max-w-xl">
-        You're the most amazing person I know. Your kindness, your laughter, your spirit — it makes everything better.
+        You&aposre the most amazing person I know. Your kindness, your laughter, your spirit — it makes everything better.
       </p>
 
       <p className="mt-6 text-lg md:text-2xl text-pink-800 max-w-xl">

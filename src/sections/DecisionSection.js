@@ -25,7 +25,7 @@ export default function DecisionSection() {
   return (
     <section className="h-screen w-full flex flex-col items-center justify-center text-center bg-pink-300 px-4 relative">
       <h2 className="text-2xl md:text-4xl font-semibold text-pink-900 mb-12">
-        So... what’s your answer?
+        So... what&aposs your answer?
       </h2>
 
       <div className="flex w-full justify-between px-10 md:px-32 absolute bottom-24">
