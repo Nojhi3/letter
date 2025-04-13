@@ -69,7 +69,7 @@ export default function DecisionAuraSection() {
 
       {/* Message */}
       <h1 className="text-3xl md:text-5xl font-bold text-white z-10 px-6">
-        So... what's your answer?
+        So... what&apos;s your answer?
       </h1>
     </section>
   )

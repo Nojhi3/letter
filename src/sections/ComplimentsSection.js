@@ -41,10 +41,10 @@ export default function ComplimentsSection() {
       </h2>
       
       <p className="mt-6 text-lg md:text-2xl text-pink-800 max-w-xl">
-        You're the most amazing person I know. 
+        You&apos;re the most amazing person I know. 
       </p>
       
-      <WavyText text= "Your kindness, your laughter, your spirit"/>
+      <WavyText text= "Your Kindness, your Laughter, your Spirit"/>
 
       <p className="mt-6 text-lg md:text-2xl text-pink-800 max-w-xl">
         — it makes everything better.
