@@ -3,6 +3,7 @@
 import { useMotionValue, useTransform, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { supabase } from '../utils/supabaseClient'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function DecisionAuraSection() {
   const mouseX = useMotionValue(0)
@@ -29,9 +30,20 @@ export default function DecisionAuraSection() {
   )
 
   const handleClick = async (response) => {
+    const newUuid = uuidv4()
+    const timeResponse = new Date().toISOString()
+
+    console.log('UUID:', newUuid)
+    console.log('Response:', response)
+    console.log('Time Response:', timeResponse)
+
     const { data, error } = await supabase
       .from('response_data')
-      .insert([{ answer: response }])
+      .insert([{
+        uuid: newUuid,
+        answer: response,
+        time_response: timeResponse
+      }])
 
     if (error) {
       console.error('Error inserting response:', error)

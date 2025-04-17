@@ -2,6 +2,7 @@ import IntroSection from '../sections/IntroSection'
 import ComplimentsSection from '../sections/ComplimentsSection'
 import ProposalSection from '../sections/ProposalSection'
 import DecisionAuraSection from '../sections/DecisionSection'
+import DecisionAuraSection2 from '../sections/FeedbackSection'
 import MysteryEyesSection from '../sections/MysteryEyesSection'
 import UseTransform from '../components/test2'
 import DecisionAura from '../components/test3'
@@ -15,7 +16,7 @@ export default function Home() {
       <ComplimentsSection />
       <MysteryEyesSection />
       <ProposalSection />
-      <DecisionAuraSection />
+      <DecisionAuraSection2 />
       {/* <DecisionAura /> */}
       {/* <h1>ello</h1>
       <TestConnection /> */}
