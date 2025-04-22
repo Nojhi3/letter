@@ -6,12 +6,12 @@ import DecisionAuraSection2 from '../sections/FeedbackSection'
 import MysteryEyesSection from '../sections/MysteryEyesSection'
 import UseTransform from '../components/test2'
 import DecisionAura from '../components/test3'
-
+import BackgroundMusicPlayer from '../sections/toggleMusic'
 
 export default function Home() {
   return (
     <main>
-      
+      <BackgroundMusicPlayer />
       <IntroSection />
       <ComplimentsSection />
       <MysteryEyesSection />

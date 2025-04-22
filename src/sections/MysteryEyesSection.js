@@ -32,8 +32,9 @@ export default function MysteryEyesSection() {
         {/* Slit reveal container (starts at 100px height) */}
         <motion.div
           style={{ height: revealHeight }}
-          className="relative w-full max-w-4xl overflow-hidden z-10 "
+          className="absolute w-full max-w-4xl overflow-hidden z-10 top-1/2 -translate-y-1/2"
         >
+
           {/* Mona Lisa or desired image */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -43,7 +44,7 @@ export default function MysteryEyesSection() {
                 height={1500}
                 style={{ 
                     objectFit: 'cover',
-                    objectPosition: 'center -150px' 
+                    objectPosition: 'center 30%' 
                 }}
                 className="w-full h-full object-cover object-center pointer-events-none"
             />

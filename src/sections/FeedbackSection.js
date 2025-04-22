@@ -3,6 +3,7 @@
 import { useMotionValue, useTransform, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { supabase } from '../utils/supabaseClient'
+import Confetti from 'react-confetti'
 
 export default function DecisionAuraSection2() {
   const mouseX = useMotionValue(0)
@@ -11,9 +12,8 @@ export default function DecisionAuraSection2() {
   const [uuid, setUuid] = useState(null)
   const [showFeedback, setShowFeedback] = useState(false)
   const [feedback, setFeedback] = useState('')
-
   const [showThankYou, setShowThankYou] = useState(false)
-
+  const [confettiTriggered, setConfettiTriggered] = useState(false)
 
   useEffect(() => {
     const handleResize = () => setScreenWidth(window.innerWidth)
@@ -96,9 +96,14 @@ export default function DecisionAuraSection2() {
     } else {
       console.log('Feedback submitted successfully:', data)
       alert('Thanks for your feedback!')
+
+      // Trigger confetti and show Thank You message after a short delay
       setShowFeedback(false)
-      setFeedback('')
-      setShowThankYou(true)
+      setConfettiTriggered(true)
+
+      setTimeout(() => {
+        setShowThankYou(true) // Show "Thank You" message
+      }, 500) // Delay before showing the thank you message
     }
   }
 
@@ -111,14 +116,17 @@ export default function DecisionAuraSection2() {
       <motion.div className="absolute inset-0 z-0 pointer-events-none blur-2xl" style={{ background: leftGlow }} />
       <motion.div className="absolute inset-0 z-0 pointer-events-none blur-2xl" style={{ background: rightGlow }} />
 
+      {/* Confetti Effect */}
+      {confettiTriggered && (
+        <Confetti width={window.innerWidth} height={window.innerHeight} />
+      )}
+
       {/* Message */}
       {!showFeedback && !showThankYou && (
         <>
-          {!showFeedback && !showThankYou && (
-            <h1 className="text-4xl md:text-5xl font-bold text-white z-10 px-6">
-              So... what&apos;s your answer?
-            </h1>
-          )}
+          <h1 className="text-4xl md:text-5xl font-bold text-white z-10 px-6">
+            So... what&apos;s your answer?
+          </h1>
 
           {/* Left Arrow - YES */}
           <motion.div
@@ -142,7 +150,6 @@ export default function DecisionAuraSection2() {
         </>
       )}
 
-
       {/* Feedback Form */}
       {showFeedback && (
         <motion.div
@@ -151,7 +158,6 @@ export default function DecisionAuraSection2() {
           transition={{ duration: 0.4 }}
           className="absolute inset-0 flex flex-col items-center justify-center px-8 z-10"
         >
-      
           <textarea
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}
@@ -168,6 +174,7 @@ export default function DecisionAuraSection2() {
         </motion.div>
       )}
 
+      {/* Thank You Message */}
       {showThankYou && (
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -180,7 +187,6 @@ export default function DecisionAuraSection2() {
           </h1>
         </motion.div>
       )}
-
     </section>
   )
 }
