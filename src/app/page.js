@@ -7,10 +7,16 @@ import MysteryEyesSection from '../sections/MysteryEyesSection'
 import UseTransform from '../components/test2'
 import DecisionAura from '../components/test3'
 import BackgroundMusicPlayer from '../sections/toggleMusic'
+import Test4 from '../components/test4'
+import StartOverlay from '../sections/Overlay'
+import MobileBlockerWrapper from '../components/MobileBlock'
+
 
 export default function Home() {
   return (
     <main>
+      <MobileBlockerWrapper />
+      <StartOverlay />
       <BackgroundMusicPlayer />
       <IntroSection />
       <ComplimentsSection />

@@ -9,7 +9,7 @@ export default function ProposalSection() {
         So... here&apos;s the truth.
       </h2>
       <p className="mt-6 text-lg md:text-2xl text-pink-900 max-w-2xl">
-        I like you. Like, really like you. More than I&apos;ve ever liked anyone.
+        I love you. Like, really love you. More than I&apos;ve ever loved anyone.
       </p>
       <p className="mt-6 text-lg md:text-2xl text-pink-900 max-w-2xl">
         This isn&apos;t just a page, it&apos;s a piece of how I feel. And I was wondering...

@@ -44,7 +44,7 @@ export default function ComplimentsSection() {
         You&apos;re the most amazing person I know. 
       </p>
       
-      <WavyText text= "Your Kindness, your Laughter, your Spirit"/>
+      <WavyText text= "Your Kindness, Your Smile, Your Spirit"/>
 
       <p className="mt-6 text-lg md:text-2xl text-pink-800 max-w-xl">
         — it makes everything better.
