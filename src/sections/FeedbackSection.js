@@ -124,18 +124,23 @@ export default function DecisionAuraSection2() {
       {/* Message */}
       {!showFeedback && !showThankYou && (
         <>
-          <h1 className="text-4xl md:text-5xl font-bold text-white z-10 px-6">
-            So... what&apos;s your answer?
-          </h1>
+          <div className="z-10 flex flex-col items-center space-y-6 px-6">
+            {/* Main Question */}
+            <h1 className="text-4xl md:text-5xl font-bold text-white text-center">
+              So... what&apos;s your answer?
+            </h1>
+
+          </div>
 
           {/* Left Arrow - YES */}
           <motion.div
             onClick={() => handleClick('yes')}
             whileHover={{ scale: 1.3, opacity: 1 }}
             whileTap={{ scale: 0.9 }}
-            className="absolute left-5 top-1/2 -translate-y-1/2 text-5xl text-white opacity-60 cursor-pointer transition-all z-10 select-none"
+            className="absolute left-5 top-1/2 -translate-y-1/2 text-white opacity-70 cursor-pointer transition-all z-10 select-none flex flex-col items-center"
           >
-            ←
+            <span className="text-5xl">←</span>
+            <span className="text-sm mt-1 text-white">yes</span>
           </motion.div>
 
           {/* Right Arrow - NO */}
@@ -143,10 +148,12 @@ export default function DecisionAuraSection2() {
             onClick={() => handleClick('no')}
             whileHover={{ scale: 1.3, opacity: 1 }}
             whileTap={{ scale: 0.9 }}
-            className="absolute right-5 top-1/2 -translate-y-1/2 text-5xl text-white opacity-60 cursor-pointer transition-all z-10 select-none"
+            className="absolute right-5 top-1/2 -translate-y-1/2 text-white opacity-70 cursor-pointer transition-all z-10 select-none flex flex-col items-center"
           >
-            →
+            <span className="text-5xl">→</span>
+            <span className="text-sm mt-1 text-white">no</span>
           </motion.div>
+
         </>
       )}
 
