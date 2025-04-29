@@ -62,7 +62,7 @@ export default function BackgroundMusicPlayer() {
   return (
     <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2">
       <audio ref={audioRef} loop>
-        <source src="/BackgroundAudio.mp3" type="audio/mpeg" />
+        <source src="/BackgroundAudio2.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
 
